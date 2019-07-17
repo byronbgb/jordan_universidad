@@ -43,13 +43,24 @@
         </thead>
 
         <tbody>
+        <?php $totalCreditos = 0; ?>
+
         @foreach($estudiante->materias as $materia)
             <tr>
                 <td>{{ $materia->nombre }}</td>
                 <td>{{ $materia->credito }}</td>
             </tr>
+
+            <?php $totalCreditos += $materia->credito; ?>
         @endforeach
         </tbody>
+
+        <tfoot>
+        <tr>
+            <th>Total sumatoria de créditos: </th>
+            <th>{{ $totalCreditos }}</th>
+        </tr>
+        </tfoot>
     </table>
 </div>
 

@@ -17,6 +17,7 @@ class CreateEstudiantesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->integer('edad');
+            $table->string('email');
             $table->timestamps();
         });
 
